@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secuuth</title>
+  <script src="https://cdn.jsdelivr.net/gh/deepSecure/js-bundle/Secuuth.bundle.js"></script>  
+  <script>
+   
+    
+     const secuuth = new Secuuth({
+      keyId: "**************",
+      profileName: "Default",
+      containerId: "secuuthForm",
+
+      onSubmit: async (tokens) => {
+        console.log(tokens)
+
+        //const data = { username: localStorage.getItem('accessToken')}
+       
+         await fetch('http://127.0.0.1:5000/', {
+         method: 'POST', // or 'PUT'
+         headers: {
+                   'Content-Type': 'application/json',
+                 },
+        body: JSON.stringify(tokens).toString()});
+    
+      },
+    });
+  </script>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background: url("https://uploads-ssl.webflow.com/61234975b500ae0500a02f42/61237662eb07786a67b89a4e_Background%20Image%201%201.png");
+    }
+  </style>
+</head>
+
+<body>
+  
+    <div id="secuuthForm"></div>
+
+
+  
+  
+</body>
+
+</html>
