@@ -2,6 +2,7 @@
 Secuuth integration in plain HTML
 
 # To run server
+cd secuuth-web-html
 node Server.js
 
 # url
